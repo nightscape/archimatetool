@@ -3,9 +3,9 @@ WORKDIR /app
 RUN apk add --no-cache \
     wget \
     unzip
-ARG ARCHI_VERSION=4.8.1
-ARG COLLAB_VERSION=0.7.1.202102021056
-RUN wget -O archi.tgz --post-data dl=${ARCHI_VERSION}%2FArchi-Linux64-${ARCHI_VERSION}.tgz 'https://www.archimatetool.com/downloads/archi/'  && \
+ARG ARCHI_VERSION=4.10.0
+ARG COLLAB_VERSION=0.8.7
+RUN wget -O archi.tgz https://www.archimatetool.com/downloads/index.php?/downloads/archi/${ARCHI_VERSION}/Archi-Linux64-${ARCHI_VERSION}.tgz && \
     wget -O collab.archiplugin -q https://www.archimatetool.com/downloads/coarchi/coArchi_${COLLAB_VERSION}.archiplugin && \
     tar xf archi.tgz && \
     unzip collab.archiplugin -d Archi/plugins && \
